@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="Local Server">
+    <serverData>
+      <paths name="Local Server">
+        <serverdata>
+          <mappings>
+            <mapping deploy="sistem-ta" local="$PROJECT_DIR$" web="/sistem-ta" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

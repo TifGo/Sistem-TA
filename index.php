@@ -1,19 +1,12 @@
 <?php
-/**
- * Sistem-TA.
- * Copyright (c) 2016 affandeZone.
- * e : affandes@gmail.com
- * index.php 2/20/16 2:47 PM
- */
-?>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Hi - Sistem TA</title>
-</head>
-<body>
-<h1>Ooppss...</h1>
-<p>We are working to finish this nice apps. Please come later.</p>
-</body>
-</html>
+
+// comment out the following two lines when deployed to production
+defined('YII_DEBUG') or define('YII_DEBUG', true);
+defined('YII_ENV') or define('YII_ENV', 'dev');
+
+require(__DIR__ . '/vendor/autoload.php');
+require(__DIR__ . '/vendor/yiisoft/yii2/Yii.php');
+
+$config = require(__DIR__ . '/config/web.php');
+
+(new yii\web\Application($config))->run();
