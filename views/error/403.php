@@ -1,4 +1,10 @@
 <?php
+/**
+ * Sistem-TA.
+ * Copyright (c) 2016 affandeZone.
+ * e : affandes@gmail.com
+ * 403.php 3/3/16 8:45 AM
+ */
 
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -8,7 +14,7 @@ use yii\helpers\Url;
 /* @var $message string */
 /* @var $exception Exception */
 
-$this->title = 'Error 404';
+$this->title = 'Error 403';
 ?>
 <div class="site-error">
 
@@ -19,10 +25,10 @@ $this->title = 'Error 404';
     </div>
 
     <p>
-        Ooppss... disini tidak ada apa-apa.
+        Akses ditolak
     </p>
     <p>
-        Jika anda tersesat, silahkan <a href="<?= Url::to(['main/index']); ?>">kembali</a>
+        Jika anda keliru, silahkan <a href="<?= Url::to(['main/index']); ?>">kembali</a>
     </p>
 
 </div>

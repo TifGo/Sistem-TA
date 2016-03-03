@@ -37,4 +37,9 @@ class MainController extends Controller
         return $this->render('index');
     }
 
+    public function actionProfil()
+    {
+        return $this->render('profil');
+    }
+
 }
