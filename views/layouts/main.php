@@ -1,9 +1,9 @@
 <?php
 /**
+ * Sistem-TA.
  * Copyright (c) 2016 affandeZone.
- * cat-2016.
  * e : affandes@gmail.com
- * main.php 3/9/16 10:49 AM
+ * main.php 3/9/16 11:34 PM
  */
 
 use yii\helpers\Html;
@@ -20,7 +20,7 @@ AppAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?> - CAT UIN SUSKA Riau</title>
+    <title><?= Html::encode($this->title) ?> - TA Manager</title>
     <?php $this->head() ?>
 </head>
 <body>

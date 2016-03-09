@@ -1,9 +1,9 @@
 <?php
 /**
+ * Sistem-TA.
  * Copyright (c) 2016 affandeZone.
- * cat-2016.
  * e : affandes@gmail.com
- * index.php 3/9/16 10:41 AM
+ * index.php 3/9/16 11:39 PM
  */
 
 use yii\helpers\Url;
@@ -21,19 +21,19 @@ $this->title = 'Masuk';
             <div class="card-content black-text">
 
                 <div class="card-title"><i class="material-icons mdi-action-autorenew prefix"></i> Masuk</div>
-                <p class="orange-text"><i class="mdi-alert-error"></i> Kesalahan pengisian form</p>
+                <p class="orange-text"><i class="mdi-alert-error"></i> <?= ((isset($model)) ? $model->getFirstError('o') : '') ?></p>
                 <form action="<?= Url::to(['main/masuk']); ?>" method="post">
                     <input type="hidden" name="<?= Yii::$app->request->csrfParam; ?>" value="<?= Yii::$app->request->csrfToken; ?>">
 
                     <div class="input-field">
                         <i class="material-icons mdi-action-verified-user prefix"></i>
-                        <input class="validate" type="text" id="signin-reg" name="SignIn[kodeRegistrasi]">
+                        <input class="validate" type="text" id="signin-reg" name="SignIn[usname]">
                         <label for="signin-reg" data-error=" Oppss" data-success=" Ok">Kode Registrasi</label>
                     </div>
 
                     <div class="input-field">
                         <i class="material-icons mdi-action-lock prefix"></i>
-                        <input class="validate" type="text" id="signin-val" name="SignIn[kodeValidasi]">
+                        <input class="validate" type="text" id="signin-val" name="SignIn[psword]">
                         <label for="signin-val" data-error=" Oppss" data-success=" Ok">Kode Validasi</label>
                     </div>
 

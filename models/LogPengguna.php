@@ -1,9 +1,9 @@
 <?php
 /**
+ * Sistem-TA.
  * Copyright (c) 2016 affandeZone.
- * cat-2016.
  * e : affandes@gmail.com
- * LogPeserta.php 3/9/16 10:15 AM
+ * LogPengguna.php 3/9/16 11:41 PM
  */
 
 namespace app\models;
@@ -11,7 +11,7 @@ namespace app\models;
 
 use yii\db\ActiveRecord;
 
-class LogPeserta extends ActiveRecord
+class LogPengguna extends ActiveRecord
 {
     /**
      * Nama Tabel untuk menyimpan log session peserta.

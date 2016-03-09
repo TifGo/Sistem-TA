@@ -1,4 +1,10 @@
 <?php
+/**
+ * Sistem-TA.
+ * Copyright (c) 2016 affandeZone.
+ * e : affandes@gmail.com
+ * web.php 3/9/16 11:41 PM
+ */
 
 $params = require(__DIR__ . '/params.php');
 
@@ -29,7 +35,7 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => 'app\models\IdentitasPengguna',
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [

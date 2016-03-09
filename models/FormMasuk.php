@@ -1,9 +1,9 @@
 <?php
 /**
+ * Sistem-TA.
  * Copyright (c) 2016 affandeZone.
- * cat-2016.
  * e : affandes@gmail.com
- * FormMasuk.php 3/9/16 10:52 AM
+ * FormMasuk.php 3/9/16 11:40 PM
  */
 
 namespace app\models;
@@ -19,15 +19,15 @@ class FormMasuk extends Model
      * @var kodeRegistrasi Kode Registrasi Peserta.
      * @var kodeValidasi Kode Validasi Peserta.
      */
-    public $kodeRegistrasi;
-    public $kodeValidasi;
+    public $usname;
+    public $psword;
 
 
     /**
      * Objek identitas peserta
      * @var bool | IdentitasPeserta
      */
-    private $_peserta = false;
+    private $_pengguna = false;
 
 
     /**
@@ -45,9 +45,9 @@ class FormMasuk extends Model
     {
         return [
             // namaPengguna dan kataSandi harus
-            [['kodeRegistrasi', 'kodeValidasi'], 'required'],
+            [['usname', 'psword'], 'required'],
             // kataSandi divalidasi oleh validasiKode()
-            ['kodeValidasi', 'validasi'],
+            ['psword', 'validasi'],
         ];
     }
 
@@ -60,10 +60,10 @@ class FormMasuk extends Model
     public function validasi($attribute, $params)
     {
         if (!$this->hasErrors()) {
-            $peserta = $this->getPeserta();
+            $pengguna = $this->getPengguna();
 
-            if (!$peserta) {
-                $this->addError('o', 'Kode Registrasi atau Kode Validasi tidak cocok');
+            if (!$pengguna) {
+                $this->addError('o', 'Username atau Password tidak cocok');
             }
         }
     }
@@ -72,13 +72,13 @@ class FormMasuk extends Model
      * Ambil objek pengguna
      * @return IdentitasPeserta|false Identitas pengguna
      */
-    public function getPeserta()
+    public function getPengguna()
     {
-        if ($this->_peserta == false) {
-            $this->_peserta = IdentitasPeserta::findByUsname($this->kodeRegistrasi, $this->kodeValidasi);
+        if ($this->_pengguna == false) {
+            $this->_pengguna = IdentitasPengguna::findByUsname($this->usname, $this->psword);
         }
 
-        return $this->_peserta;
+        return $this->_pengguna;
     }
 
     /**
@@ -90,20 +90,20 @@ class FormMasuk extends Model
         if ($this->validate()) {
 
             // Generate Session Id
-            $this->getPeserta()->generateSessionId();
+            $this->getPengguna()->generateSessionId();
 
             // Create session logs ke database
-            $sessionLog = new LogPeserta();
+            $sessionLog = new LogPengguna();
             $sessionLog->logInTime = date('Y-m-d H:i:s');
-            $sessionLog->sessionId = $this->getPeserta()->getAuthKey();
+            $sessionLog->sessionId = $this->getPengguna()->getAuthKey();
             $sessionLog->expiredDate = date('Y-m-d H:i:s', strtotime('+' . self::SESSION_EXPIRED . 'seconds'));
-            $sessionLog->idPeserta = $this->getPeserta()->getId();
+            $sessionLog->idPengguna = $this->getPengguna()->getId();
             $sessionLog->remoteAddress = Yii::$app->request->userIP;
             $sessionLog->info = Yii::$app->request->userAgent;
             $sessionLog->save();
 
             // Return
-            return Yii::$app->user->login($this->getPeserta(), self::SESSION_EXPIRED);
+            return Yii::$app->user->login($this->getPengguna(), self::SESSION_EXPIRED);
 
         } else {
             return false;

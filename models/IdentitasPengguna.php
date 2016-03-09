@@ -1,9 +1,9 @@
 <?php
 /**
+ * Sistem-TA.
  * Copyright (c) 2016 affandeZone.
- * cat-2016.
  * e : affandes@gmail.com
- * IdentitasPengguna.php 3/9/16 9:48 AM
+ * IdentitasPengguna.php 3/9/16 11:44 PM
  */
 
 namespace app\models;
@@ -13,7 +13,7 @@ use yii\helpers\Html;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 
-class IdentitasPeserta extends ActiveRecord implements IdentityInterface
+class IdentitasPengguna extends ActiveRecord implements IdentityInterface
 {
     /**
      * Menyimpan session id untuk diperiksa ke tabel log peserta
@@ -117,6 +117,14 @@ class IdentitasPeserta extends ActiveRecord implements IdentityInterface
     public function getNama()
     {
         return $this->attributes['nama'];
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTipeAkun()
+    {
+        return $this->attributes['tipeAkun'];
     }
 
 
