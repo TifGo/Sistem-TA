@@ -3,7 +3,7 @@
  * Sistem-TA.
  * Copyright (c) 2016 affandeZone.
  * e : affandes@gmail.com
- * index.php 3/9/16 11:39 PM
+ * index.php 3/10/16 9:49 AM
  */
 
 use yii\helpers\Url;
@@ -28,13 +28,13 @@ $this->title = 'Masuk';
                     <div class="input-field">
                         <i class="material-icons mdi-action-verified-user prefix"></i>
                         <input class="validate" type="text" id="signin-reg" name="SignIn[usname]">
-                        <label for="signin-reg" data-error=" Oppss" data-success=" Ok">Kode Registrasi</label>
+                        <label for="signin-reg" data-error=" Oppss" data-success=" Ok">Username</label>
                     </div>
 
                     <div class="input-field">
                         <i class="material-icons mdi-action-lock prefix"></i>
                         <input class="validate" type="text" id="signin-val" name="SignIn[psword]">
-                        <label for="signin-val" data-error=" Oppss" data-success=" Ok">Kode Validasi</label>
+                        <label for="signin-val" data-error=" Oppss" data-success=" Ok">Password</label>
                     </div>
 
                     <div class="input-field">
