@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="Local Server" showNewOnTargetInSync="false">
+  <component name="PublishConfigData" serverName="MyServer" uploadOnCheckin="f8f38d80-076c-49eb-bf77-19fb6e988db7" showNewOnTargetInSync="false">
     <serverData>
-      <paths name="Local Server">
+      <paths name="MyServer">
         <serverdata>
           <mappings>
-            <mapping deploy="sistem-ta" local="$PROJECT_DIR$" web="/sistem-ta" />
+            <mapping deploy="ta" local="$PROJECT_DIR$" web="/ta" />
           </mappings>
         </serverdata>
       </paths>
     </serverData>
+    <option name="myUploadOnCheckinName" value="MyServer" />
   </component>
 </project>
