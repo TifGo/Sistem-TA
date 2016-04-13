@@ -24,4 +24,14 @@ class ErrorController extends Controller
     {
         return $this->render('404');
     }
+
+    public function actionError404()
+    {
+        return $this->render('404');
+    }
+
+    public function actionError403()
+    {
+        return $this->render('403');
+    }
 }
